@@ -13,7 +13,7 @@ default:
     seed: 1
     torch_deterministic: True
     cpu_offload: False
-    device: cuda
+    device: cpu
     total_timesteps: 10_000_000
     learning_rate: 2.5e-4
     anneal_lr: True
@@ -550,14 +550,14 @@ pokemon_red:
   use_rnn: True
   train:
     total_timesteps: 1_000_000
-    num_envs: 96 
-    num_workers: 24
-    env_batch_size: 32
+    num_envs: 4
+    num_workers: 2
+    env_batch_size: 2
     zero_copy: False
     update_epochs: 3
     gamma: 0.998
-    batch_size: 65536
-    minibatch_size: 2048
+    batch_size: 1024
+    minibatch_size: 512
     compile: True
     learning_rate: 2.0e-4
     anneal_lr: False
