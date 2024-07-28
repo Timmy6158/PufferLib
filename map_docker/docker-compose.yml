@@ -1,0 +1,15 @@
+services:
+  ws-api:
+    build:
+      context: ./ws-server
+    network_mode: host
+    ports:
+      - "8080:8080"
+
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
+    ports:
+      - "8000:8000"
